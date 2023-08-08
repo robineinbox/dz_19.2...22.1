@@ -15,7 +15,7 @@ class Category(models.Model):
         verbose_name_plural = 'категории'
 
 
-class Products(models.Model):
+class Product(models.Model):
     name = models.CharField(max_length=100, verbose_name='наименование')
     description = models.TextField(verbose_name='описание', **NULLABLE)
     image = models.ImageField(verbose_name='изображение (превью)', **NULLABLE)
@@ -43,7 +43,3 @@ class Contacts(models.Model):
     class Meta:
         verbose_name = 'контакт'
         verbose_name_plural = 'контакты'
-
-
-class Product:
-    pass
