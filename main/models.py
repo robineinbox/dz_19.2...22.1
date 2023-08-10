@@ -36,8 +36,8 @@ class Product(models.Model):
         return f'{self.name} ({self.category})'
 
     class Meta:
-        verbose_name = 'продукт'
-        verbose_name_plural = 'продукты'
+        verbose_name = 'товар'
+        verbose_name_plural = 'товары'
 
 
 class Contacts(models.Model):

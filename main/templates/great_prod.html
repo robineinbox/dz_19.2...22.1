@@ -1,37 +1,28 @@
 {% extends 'main/base.html' %}
-
 {% block content%}
-
 <div class="row text-left">
-
         <div>
             <h1>Добавьте свои товары</h1>
         </div>
-
         <form method="post" action="" class="form-floating">
             {% csrf_token %}
-
             <div class="mb-3">
                 <label for="name">Название товара</label>
-                <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя" required>
+                <input type="text" name="name" class="form-control" id="name" placeholder="Введите название товара" required>
             </div>
-
             <div class="mb-3">
-                <label for="name">Описание товара</label>
-                <input type="text" name="description" class="form-control" id="name" placeholder="Немного, сколько сможете" required>
+                <label for="description">Описание товара</label>
+                <input type="text" name="description" class="form-control" id="description" placeholder="Введите описание товара" required>
             </div>
-
-             <div class="mb-3">
-                <label for="name">Категория</label>
-                <input type="text" name="category" class="form-control" id="name" placeholder="мебель, посуда и другое" required>
+            <div class="mb-3">
+                <label for="category">Категория</label>
+                <input type="text" name="category" class="form-control" id="category" placeholder="Введите категорию товара" required>
             </div>
-
-             <div class="mb-3">
-                <label for="name">Цена в уе</label>
-                <input type="text" name="price" class="form-control" id="name" placeholder="пожалуйста" required>
+            <div class="mb-3">
+                <label for="price">Цена в у.е.</label>
+                <input type="text" name="price" class="form-control" id="price" placeholder="Введите цену товара" required>
             </div>
-
             <button type="submit" class="btn btn-lg btn-block btn-outline-primary">Добавить продукт</button>
         </form>
-
+</div>
 {% endblock %}
