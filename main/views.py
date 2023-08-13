@@ -2,11 +2,12 @@ from django.shortcuts import render, get_object_or_404
 from datetime import datetime
 from main.models import Product
 
+
 def home(request):
-    return render(request, 'base.html')
+    return render(request, 'main/base.html')
 
 def contact(request):
-    return render(request, 'contact.html')
+    return render(request, 'main/contact.html')
 
 def index(request):
     cat_list = Product.objects.all()
@@ -22,7 +23,7 @@ def contacts(request):
         phone = request.POST.get('phone')
         message = request.POST.get('message')
         print(name, phone, message)
-    return render(request, 'contact.html')
+    return render(request, 'main/contact.html')
 
 def product(request, product_id):
     """представление страницы main/product.html для каждого продукта"""

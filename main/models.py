@@ -22,7 +22,6 @@ class Category(models.Model):
         verbose_name = 'категория'
         verbose_name_plural = 'категории'
 
-
 class Product(models.Model):
     name = models.CharField(max_length=100, verbose_name='наименование')
     description = models.TextField(verbose_name='описание', **NULLABLE)
@@ -39,7 +38,6 @@ class Product(models.Model):
         verbose_name = 'товар'
         verbose_name_plural = 'товары'
 
-
 class Contacts(models.Model):
     country = models.CharField(max_length=50, verbose_name='страна')
     city = models.CharField(max_length=50, verbose_name='город')
@@ -53,7 +51,6 @@ class Contacts(models.Model):
     class Meta:
         verbose_name = 'контакт'
         verbose_name_plural = 'контакты'
-
 
 class YourModel(models.Model):
     unit_price = models.DecimalField(max_digits=10, decimal_places=2)

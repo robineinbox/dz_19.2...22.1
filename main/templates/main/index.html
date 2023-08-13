@@ -1,13 +1,10 @@
 {% extends 'main/base.html' %}
-
-    {% block content%}
+{% block content%}
     <div class="row text-center">
-
         <div>
             <h1>Магазин "Всё для дома"</h1>
             <h2>Самая лучшая мебель и посуда для вашего дома!</h2>
         </div>
-
     {% for object in object_list %}
         <div class="col-3">
             <div class="card mb-4 box-shadow">
@@ -15,10 +12,10 @@
                     <div class="card-body">
                         <h3 class="card-title">{{ object.name_prod }}</h3>
                         <h4 class="card-title pricing-card-title">{{ object.price_prod }} руб.</h4>
-                        <img src="media/333.jpg" alt="Card image">
+                        <img src="{{ object.image }}" alt="Card image">
                         <p class="card-text">
-                        <p class="card-text">{{ product.name }}</p>
-            <p class="card-text">{{ product.description|truncatechars:100 }}</p> <!-- ограничиваем описание до 100 символов -->
+                            <p class="card-text">{{ object.category.name_category }}</p>
+                            <p class="card-text">{{ object.description_prod|truncatechars:100 }}</p> <!-- ограничиваем описание до 100 символов -->
                             {{ object.description_prod }}
                         </p>
                         <a href="{% url 'product' object.id %}" class="btn btn-primary">Купить</a>
@@ -28,8 +25,8 @@
         </div>
         {% if forloop.counter|divisibleby:"4" and not forloop.last %}
             </div>
-    <div class="row text-center">
+            <div class="row text-center">
         {% endif %}
     {% endfor %}
     </div>
-    {% endblock %}
+{% endblock %}

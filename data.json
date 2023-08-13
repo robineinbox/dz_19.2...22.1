@@ -1,18 +1,24 @@
 [
   {
-    "model": "main.category",
+    "model": "main.product",
     "pk": 1,
     "fields": {
-      "name_category": "Мебель",
-      "category_description": "Качественная мебель"
+      "name_prod": "Мебель",
+      "price_prod": 5500,
+      "image": "/static/media/222.jpg",
+      "category": 1,
+      "description_prod": "Хорошая, удобная мебель"
     }
   },
   {
-    "model": "main.category",
+    "model": "main.product",
     "pk": 2,
     "fields": {
-      "name_category": "Посуда",
-      "category_description": "Хорошая посуда"
+      "name_prod": "Посуда",
+      "price_prod": 1350,
+      "image": "/static/media/111.jpg",
+      "category": 2,
+      "description_prod": "Качественная посуда"
     }
   }
 ]
