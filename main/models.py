@@ -31,6 +31,7 @@ class Product(models.Model):
     produce_day = models.DateField(verbose_name='дата создания', default=datetime.date(2022, 1, 1))
     last_change = models.DateField(verbose_name='дата последнего изменения', auto_now=True)
 
+
     def __str__(self):
         return f'{self.name} ({self.category})'
 
