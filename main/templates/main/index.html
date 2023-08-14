@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% block content%}
+{% load media %}
     <div class="row text-center">
         <div>
             <h1>Магазин "Всё для дома"</h1>
@@ -12,7 +13,7 @@
                     <div class="card-body">
                         <h3 class="card-title">{{ object.name_prod }}</h3>
                         <h4 class="card-title pricing-card-title">{{ object.price_prod }} руб.</h4>
-                        <img src="{{ object.image }}" alt="Card image">
+                        <img src="{{ object.image|media_url }}" alt="Card image">
                         <p class="card-text">
                             <p class="card-text">{{ object.category.name_category }}</p>
                             <p class="card-text">{{ object.description_prod|truncatechars:100 }}</p> <!-- ограничиваем описание до 100 символов -->
