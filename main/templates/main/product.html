@@ -1,25 +1,26 @@
 {% extends 'main/base.html' %}
-
 {% block content%}
-
     <div class="container">
         <div class="row">
             <!-- Левая часть с изображением -->
             <div class="col-md-4">
-                <img src="media/333.jpg" alt="Изображение товара" class="img-fluid">
-                <img src="{% media_url 'images/background.jpg' %}" alt="Image">
+                <img src="{{ MEDIA_URL }}images/background.jpg" alt="Изображение товара" class="img-fluid">
+                <img src="{{ MEDIA_URL }}images/background.jpg" alt="Image">
             </div>
-
             <!-- Правая часть с информацией о товаре -->
             <div class="col-md-8">
                 <h2>{{ product.name_prod }}</h2>
-<!--                <p>Описание товара: {{ product.description_prod }}</p>-->
+                <!--<p>Описание товара: {{ product.description_prod }}</p>-->
                 <p>Описание товара:{{ description | truncatechars:100 }}</p>
                 <p>Цена: {{ product.price_prod }} руб.</p>
                 <button class="btn btn-primary">Добавить в корзину</button>
             </div>
-
-
         </div>
     </div>
 {% endblock %}
+
+
+
+
+
+
