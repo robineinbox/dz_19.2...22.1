@@ -1,4 +1,4 @@
-{% extends 'catalog/base.html' %}
+{% extends 'main/base.html' %}
 {% load custom_tags %}
 
 {% block content %}
@@ -30,10 +30,10 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ object.title|upper }}</h5>
                         <p class="card-text">
-                            {{ object.body|slice:"500" }}...
+                            {{object.body|slice:"500"}}...
                             <a href="{% url 'blog:article' object.pk %}">читать далее...</a>
                         </p>
-                        <p><b>Дата публикации: </b>{{ object.created_at }}</p>
+                        <p><b>Дата публикации: </b>{{object.created_at}}</p>
                     </div>
                 </div>
                 <div class="row p-2">
