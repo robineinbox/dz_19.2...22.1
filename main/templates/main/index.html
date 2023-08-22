@@ -11,13 +11,15 @@
             <div class="card mb-4 box-shadow">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="card-title">{{ object.name_prod }}</h3>
-                        <h4 class="card-title pricing-card-title">{{ object.price_prod }} руб.</h4>
-                        <img src="{{ object.image|media_url }}" alt="Card image">
+                        <h3 class="card-title">{{ object.name }}</h3>
+                        <h4 class="card-title pricing-card-title">{{ object.unit_price }} руб.</h4>
+<!--                        <img src="{{ object.image|media_url }}" alt="Card image">-->
+                        {% if object.image %}
+                        <img src="{{ object.image|media_url }}" alt="{{ product.title }}" class="img-fluid">
+                        {% endif %}
                         <p class="card-text">
-                            <p class="card-text">{{ object.category.name_category }}</p>
-                            <p class="card-text">{{ object.description_prod|truncatechars:100 }}</p> <!-- ограничиваем описание до 100 символов -->
-                            {{ object.description_prod }}
+                            <p class="card-text">{{ object.category }}</p>
+                            <p class="card-text">{{ object.description|truncatechars:100 }}</p> <!-- ограничиваем описание до 100 символов -->
                         </p>
                         <a href="{% url 'product' object.id %}" class="btn btn-primary">Купить</a>
                     </div>

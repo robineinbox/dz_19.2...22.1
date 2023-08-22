@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ product.name }}</h1>
+  <p>{{ product.description }}</p>
+  <p>Цена: {{ product.price }} руб.</p>
+  {% if active_version %}
+    <p>Активная версия: {{ active_version.name }}</p>
+  {% else %}
+    <p>Активная версия отсутствует</p>
+  {% endif %}
+  <h2>Версии продукта</h2>
+  <ul>
+    {% for version in product.versions.all %}
+      <li>{{ version }}</li>
+    {% empty %}
+      <li>Нет версий</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
