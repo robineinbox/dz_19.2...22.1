@@ -1,12 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-
 from main.models import Product
-from .forms import ProductForm
+from .forms import ProductForm, VersionForm
 from .models import Version
 
 
-def create_product(request):
+def great_prod(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -18,6 +17,7 @@ def create_product(request):
     else:
         form = ProductForm()
     return render(request, 'products/create_product.html', {'form': form})
+
 
 def edit_product(request, pk):
     product = get_object_or_404(Product, pk=pk)
@@ -31,6 +31,7 @@ def edit_product(request, pk):
         form = ProductForm(instance=product)
     return render(request, 'products/edit_product.html', {'form': form})
 
+
 def delete_product(request, pk):
     product = get_object_or_404(Product, pk=pk)
     if request.method == 'POST':
@@ -38,7 +39,6 @@ def delete_product(request, pk):
         messages.success(request, 'Продукт успешно удален!')
         return redirect('products:product_list')
     return render(request, 'products/delete_product.html', {'product': product})
-
 
 
 def create_version(request, pk):
@@ -55,8 +55,6 @@ def create_version(request, pk):
         form = VersionForm()
     return render(request, 'products/create_version.html', {'form': form, 'product': product})
 
-class VersionForm:
-    pass
 
 def edit_version(request, pk):
     version = get_object_or_404(Version, pk=pk)
@@ -69,6 +67,7 @@ def edit_version(request, pk):
     else:
         form = VersionForm(instance=version)
     return render(request, 'products/edit_version.html', {'form': form, 'version': version})
+
 
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
